@@ -1,12 +1,122 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\lucas\\Desktop\\ControleGastosProjeto\\ControleGastos\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\lucas\\Desktop\\ControleGastosProjeto\\ControleGastos\\Backend\\Migrations\\20260711175450_InicialCriarPessoasETransacoes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Backend\\Migrations\\20260711175450_InicialCriarPessoasETransacoes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CC257A9-607E-1BC5-F1FD-907A1ED66015}|Backend\\ControleGastos.csproj|c:\\users\\lucas\\desktop\\controlegastosprojeto\\controlegastos\\backend\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CC257A9-607E-1BC5-F1FD-907A1ED66015}|Backend\\ControleGastos.csproj|solutionrelative:backend\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CC257A9-607E-1BC5-F1FD-907A1ED66015}|Backend\\ControleGastos.csproj|c:\\users\\lucas\\desktop\\controlegastosprojeto\\controlegastos\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CC257A9-607E-1BC5-F1FD-907A1ED66015}|Backend\\ControleGastos.csproj|solutionrelative:backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CC257A9-607E-1BC5-F1FD-907A1ED66015}|Backend\\ControleGastos.csproj|c:\\users\\lucas\\desktop\\controlegastosprojeto\\controlegastos\\backend\\models\\tipotransacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CC257A9-607E-1BC5-F1FD-907A1ED66015}|Backend\\ControleGastos.csproj|solutionrelative:backend\\models\\tipotransacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CC257A9-607E-1BC5-F1FD-907A1ED66015}|Backend\\ControleGastos.csproj|c:\\users\\lucas\\desktop\\controlegastosprojeto\\controlegastos\\backend\\models\\transacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CC257A9-607E-1BC5-F1FD-907A1ED66015}|Backend\\ControleGastos.csproj|solutionrelative:backend\\models\\transacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CC257A9-607E-1BC5-F1FD-907A1ED66015}|Backend\\ControleGastos.csproj|c:\\users\\lucas\\desktop\\controlegastosprojeto\\controlegastos\\backend\\models\\pessoa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CC257A9-607E-1BC5-F1FD-907A1ED66015}|Backend\\ControleGastos.csproj|solutionrelative:backend\\models\\pessoa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "20260711175450_InicialCriarPessoasETransacoes.cs",
+              "DocumentMoniker": "C:\\Users\\lucas\\Desktop\\ControleGastosProjeto\\ControleGastos\\Backend\\Migrations\\20260711175450_InicialCriarPessoasETransacoes.cs",
+              "RelativeDocumentMoniker": "Backend\\Migrations\\20260711175450_InicialCriarPessoasETransacoes.cs",
+              "ToolTip": "C:\\Users\\lucas\\Desktop\\ControleGastosProjeto\\ControleGastos\\Backend\\Migrations\\20260711175450_InicialCriarPessoasETransacoes.cs",
+              "RelativeToolTip": "Backend\\Migrations\\20260711175450_InicialCriarPessoasETransacoes.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-11T17:54:50.584Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\lucas\\Desktop\\ControleGastosProjeto\\ControleGastos\\Backend\\Program.cs",
+              "RelativeDocumentMoniker": "Backend\\Program.cs",
+              "ToolTip": "C:\\Users\\lucas\\Desktop\\ControleGastosProjeto\\ControleGastos\\Backend\\Program.cs",
+              "RelativeToolTip": "Backend\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-11T17:41:39.422Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TipoTransacao.cs",
+              "DocumentMoniker": "C:\\Users\\lucas\\Desktop\\ControleGastosProjeto\\ControleGastos\\Backend\\Models\\TipoTransacao.cs",
+              "RelativeDocumentMoniker": "Backend\\Models\\TipoTransacao.cs",
+              "ToolTip": "C:\\Users\\lucas\\Desktop\\ControleGastosProjeto\\ControleGastos\\Backend\\Models\\TipoTransacao.cs",
+              "RelativeToolTip": "Backend\\Models\\TipoTransacao.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-11T17:16:49.652Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\lucas\\Desktop\\ControleGastosProjeto\\ControleGastos\\Backend\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Backend\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\lucas\\Desktop\\ControleGastosProjeto\\ControleGastos\\Backend\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "Backend\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAuwAgAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-11T16:22:45.599Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Transacao.cs",
+              "DocumentMoniker": "C:\\Users\\lucas\\Desktop\\ControleGastosProjeto\\ControleGastos\\Backend\\Models\\Transacao.cs",
+              "RelativeDocumentMoniker": "Backend\\Models\\Transacao.cs",
+              "ToolTip": "C:\\Users\\lucas\\Desktop\\ControleGastosProjeto\\ControleGastos\\Backend\\Models\\Transacao.cs",
+              "RelativeToolTip": "Backend\\Models\\Transacao.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-11T16:08:25.959Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Pessoa.cs",
+              "DocumentMoniker": "C:\\Users\\lucas\\Desktop\\ControleGastosProjeto\\ControleGastos\\Backend\\Models\\Pessoa.cs",
+              "RelativeDocumentMoniker": "Backend\\Models\\Pessoa.cs",
+              "ToolTip": "C:\\Users\\lucas\\Desktop\\ControleGastosProjeto\\ControleGastos\\Backend\\Models\\Pessoa.cs",
+              "RelativeToolTip": "Backend\\Models\\Pessoa.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-11T16:03:34.654Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
