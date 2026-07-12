@@ -1,6 +1,4 @@
-﻿using ControleGastos.DTO.Pessoas;
-using ControleGastos.DTO.Transacoes;
-using ControleGastos.Models;
+﻿using ControleGastos.DTO.Transacoes;
 
 namespace ControleGastos.Services.Interfaces {
     public interface ITransacaoService {

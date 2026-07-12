@@ -11,8 +11,10 @@ namespace ControleGastos.DAO {
             _context = context;                        //new AppDbContext todas vezes, isso deixa o código mais limpo e é uma boa prática de desenvolvimento
         }
 
-        public async Task<List<Pessoa>> ListarPessoaAsync() {
-            return await _context.Pessoas.ToListAsync();
+        public async Task<List<Pessoa>> ListarPessoaAsync() {        //Utilizei esse listar para o relatório de pessoas, incluindo as transações de cada uma
+            return await _context.Pessoas 
+                .Include(p => p.Transacoes)
+                .ToListAsync();
         }
 
         public async Task<Pessoa?> BuscarPessoaPorIdAsync(int id) {
