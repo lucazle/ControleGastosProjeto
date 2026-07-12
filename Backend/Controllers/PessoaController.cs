@@ -1,5 +1,4 @@
 ﻿using ControleGastos.Services.Interfaces;
-using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Mvc;
 using RouteAttribute = Microsoft.AspNetCore.Components.RouteAttribute;
 using ControleGastos.DTO.Pessoas;
@@ -8,11 +7,12 @@ using ControleGastos.DTO.Pessoas;
 namespace ControleGastos.Controllers {
 
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/transacoes")]
     public class PessoaController : ControllerBase {
 
-        private readonly IPessoaService _pessoaService;
         //Injeção de depêndecia da camada de Service
+        private readonly IPessoaService _pessoaService;
+        
         public PessoaController(IPessoaService pessoaService) {             
             _pessoaService = pessoaService;
         }
