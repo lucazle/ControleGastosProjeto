@@ -1,7 +1,7 @@
 ﻿using ControleGastos.Models;
 
 namespace ControleGastos.DTO.Transacoes {
-    public class RespondeTransacaoDto {
+    public class ResponseTransacaoDto {
         public int Id { get; set; }
         public string Descricao { get; set; } = string.Empty;
         public decimal Valor { get; set; }

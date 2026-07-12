@@ -1,8 +1,9 @@
-﻿using ControleGastos.Data;
+﻿using ControleGastos.DAO.Interfaces;
+using ControleGastos.Data;
 using ControleGastos.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace ControleGastos.DAO.Transacoes {
+namespace ControleGastos.DAO {
     public class TransacaoDao : ITransacaoDao {
 
         private readonly AppDbContext _context;
@@ -24,3 +25,6 @@ namespace ControleGastos.DAO.Transacoes {
         }
     }
 }
+
+// Aqui eu to herdando a interface que criei e criando os metódos que fazem as consultas, add, delete do banco.
+//Usei o padrão de projeto DAO para organizar melhor em camadas o projeto, deixando cada camada mais específica para o que se propõe a fazer.
