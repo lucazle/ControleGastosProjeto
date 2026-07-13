@@ -1,6 +1,6 @@
 import type { Pessoa } from "../types";
 
-const API_URL = "https://localhost:7279/api/pessoas";
+const API_URL = "http://localhost:5256/api/pessoas";
 
 export async function buscarPessoas(): Promise<Pessoa[]> {
     const resposta = await fetch(API_URL);
