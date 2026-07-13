@@ -24,15 +24,26 @@ builder.Services.AddScoped<IPessoaService, PessoaService>();
 builder.Services.AddScoped<ITransacaoService, TransacaoService>();
 builder.Services.AddScoped<IRelatorioService, RelatorioService>();
 
+builder.Services.AddCors(options => {
+    options.AddPolicy("PermitirFrontend", policy => {
+        policy.WithOrigins("http://localhost:5173")
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+app.UseCors("PermitirFrontend");
+
 if (app.Environment.IsDevelopment()) {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
 
 app.UseHttpsRedirection();
 app.UseAuthorization();
