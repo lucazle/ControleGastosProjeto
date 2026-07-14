@@ -76,7 +76,7 @@ function Transacoes() {
                 <button onClick={carregarDados}>Atualizar</button>
                 <button onClick={handleCadastrar}>Cadastrar</button>
                 <div>
-                    Sempre que adicionar uma nova pessoa clique em atualizar.
+                    Sempre que adicionar ou remover uma nova pessoa clique em atualizar.
                 </div>
             </div>
             </div>
