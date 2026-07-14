@@ -8,6 +8,7 @@ function Pessoas() {
     const [pessoas, setPessoas] = useState<Pessoa[]>([]);
     const [nome, setNome] = useState("");
     const [idade, setIdade] = useState("");
+    const [erro, setErro] = useState("");
 
     async function carregarPessoas() {
         const dados = await buscarPessoas();
@@ -19,11 +20,16 @@ function Pessoas() {
     }, []);
 
     async function handleCadastrar() {
-    await cadastrarPessoa(nome, Number(idade));
-    setNome("");
-    setIdade("");
-    carregarPessoas();
+        setErro("");
+        try{
+            await cadastrarPessoa(nome, Number(idade));
+            setNome("");
+            setIdade("");
+            carregarPessoas();
+    } catch (e) {
+    setErro((e as Error).message);
   }
+}
 
     async function handleRemover(id: number) {
         await removerPessoa(id);
@@ -33,6 +39,8 @@ function Pessoas() {
     return (
         <div>
             <h2>Pessoas</h2>
+
+            {erro && <p style={{ color: "red" }}>{erro}</p>}
 
             <div>
             <input

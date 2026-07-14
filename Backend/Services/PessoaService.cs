@@ -26,6 +26,9 @@ namespace ControleGastos.Services {
 
         public async Task<ResponsePessoaDto> CadastrarPessoaAsync(RequestPessoaDto dto) {
 
+            if (dto.Nome == "")
+                throw new Exception("O nome é obrigatório.");
+
             var pessoa = new Pessoa {
                 Nome = dto.Nome,
                 Idade = dto.Idade

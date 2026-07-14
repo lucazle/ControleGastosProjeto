@@ -25,9 +25,14 @@ namespace ControleGastos.Controllers {
 
         //Método POST para registrar novos usuários no banco
         [HttpPost]
-        public async Task<ActionResult<ResponsePessoaDto>> Cadastrar (RequestPessoaDto dto) {  
-            var pessoa = await _pessoaService.CadastrarPessoaAsync(dto);
-            return Ok("Pessoa cadastrada com sucesso.");
+        public async Task<ActionResult<ResponsePessoaDto>> Cadastrar (RequestPessoaDto dto) {
+            try {
+                var pessoa = await _pessoaService.CadastrarPessoaAsync(dto);
+                return Ok("Pessoa cadastrada com sucesso.");
+            }catch (Exception ex) {
+                return BadRequest(new { mensagem = ex.Message });
+            }
+            
         }
 
         //Método DELETE com para remover dados do banco, como usei uma exception no service, é necessário utilizar o método com try catch ele captura o erro e lança uma resposta HTTP, tipo 404 

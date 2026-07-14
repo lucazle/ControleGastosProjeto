@@ -31,6 +31,12 @@ namespace ControleGastos.Services {
 
         public async Task <ResponseTransacaoDto> CadastrarTransacaoAsync(RequestTransacaoDto dto) {
 
+            if (dto.Descricao == "")
+                throw new Exception("A descrição é obrigatória.");
+
+            if (dto.Valor <= 0)
+                throw new Exception("O valor deve ser maior que zero.");
+
             var pessoa = await _pessoaDao.BuscarPessoaPorIdAsync(dto.PessoaId);
             if (pessoa == null)
                 throw new Exception("Pessoa não encotrada.");
