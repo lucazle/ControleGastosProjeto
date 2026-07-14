@@ -72,7 +72,16 @@ Controller → Service → DAO → Banco de Dados
 | DAO | Executa operações no banco de dados via EF Core |
 | Model | Representa as entidades do sistema (mapeadas para tabelas) |
 | DTO | Controla o formato do que entra e sai da API |
-| Frontend | Consome API e exibe informações para usuário |
+
+---
+
+## Organização do Front-end
+ 
+| Pasta | Responsabilidade |
+|---|---|
+| `components/` | Telas da aplicação (Pessoas, Transações, Totais) — estrutura visual e interação do usuário |
+| `services/` | Funções que fazem as chamadas HTTP para a API do back-end |
+| `types/` | Tipos TypeScript que espelham o formato dos DTOs do back-end |
 
 ---
 
