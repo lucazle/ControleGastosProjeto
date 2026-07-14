@@ -1,14 +1,15 @@
 import type { Transacao, TipoTransacao } from "../types";
 
+//Endereço da API do backend, se a porta mudar, ajuste aqui
 const API_URL = "https://localhost:7279/api/transacoes";
 
-//essa função vai listar todas as transações trazendo elas do back
+//lista todas transações
 export async function buscarTransacoes(): Promise<Transacao[]> {
     const resposta = await fetch(API_URL);
     return resposta.json();
 }
 
-//essa função cadastra uma transação nova, inclui a mensagem de erro para caso o usuario seja menor de 18 anos
+//essa função cadastra uma transação nova
 export async function cadastrarTransacao(
     descricao: string,
     valor: number,
@@ -21,6 +22,8 @@ export async function cadastrarTransacao(
         body: JSON.stringify({ descricao, valor, tipo, pessoaId })
     })
 
+    //Se o backend responder com texto de sucesso, não precisa ler o corpo da resposta.
+    //Se der algum erro o backend devolve o JSON com a mensagem de erro.
     if (!resposta.ok) {
         const erro = await resposta.json();
         throw new Error(erro.mensagem)

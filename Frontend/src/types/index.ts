@@ -1,4 +1,4 @@
-//esse index replica basicamente tudo que eu criei no DTO do backend, aqui estou fazendo em 
+//Replica  tudo que eu criei no DTO do backend, aqui estou fazendo em 
 //ts para o front saber o formato dos dados que vai receber.
 
 export interface Pessoa {
@@ -28,7 +28,7 @@ export interface TotalPessoa {
 
 export interface RelatorioTotais{
     pessoas: TotalPessoa[];
-    totalReceitaGeral: number;
-    totalDespesaGeral: number;
+    totalReceitasGeral: number;
+    totalDespesasGeral: number;
     saldoGeral: number;
 }

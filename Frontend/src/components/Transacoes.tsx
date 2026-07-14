@@ -3,6 +3,8 @@ import type { Pessoa, Transacao, TipoTransacao } from "../types";
 import { buscarTransacoes, cadastrarTransacao } from "../services/transacaoService";
 import { buscarPessoas } from "../services/pessoaService";
 
+//Componente responsável pela tela Transações, inclui o cadastro e listagem
+//Busca os dados da API pelas funções do transacaoService
 function Transacoes() {
     const [transacoes, setTransacoes ] = useState<Transacao[]>([]);
     const [pessoas, setPessoas] = useState<Pessoa[]>([]);
@@ -20,6 +22,7 @@ function Transacoes() {
         setPessoas(listarPessoas);        
     }
 
+    //Busca a lista de pessoas assim que o componente é executado 
     useEffect(() => {
         carregarDados();
     }, []);
@@ -28,12 +31,14 @@ function Transacoes() {
         setErro("");
         try {
             await cadastrarTransacao(descricao, Number(valor), tipo, Number(pessoaId));
+            //Limpa o formulário e busca a lista atualizada
             setDescricao("");
             setValor("");
             setTipo("Despesa");
             setPessoaId("");
             carregarDados();
         } catch (e) {
+            //Erro de validação vindo do backend
             setErro((e as Error).message);
         }
     }

@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import type { RelatorioTotais } from "../types";
 import { buscarRelatorio } from "../services/relatorioService";
 
+//Componente responsável pela tela de Relatórios. Busca os dados e exibe na tela
+//Busca os dados da API pelas funções do relatorioService
 function Totais() {
   const [relatorio, setRelatorio] = useState<RelatorioTotais | null>(null);
 
@@ -10,10 +12,12 @@ function Totais() {
     setRelatorio(dados);
   }
 
+  //Busca o relatório assim que o componente é iniciado 
   useEffect(() => {
     carregarRelatorio();
   }, []);
 
+  //Se o relatório não carregar ele exibe uma mensagem
   if (!relatorio) {
     return <p>Carregando...</p>;
   }
@@ -48,8 +52,8 @@ function Totais() {
           ))}
           <tr>
             <td><strong>Total Geral</strong></td>
-            <td><strong>R$ {relatorio.totalReceitaGeral}</strong></td>
-            <td><strong>R$ {relatorio.totalDespesaGeral}</strong></td>
+            <td><strong>R$ {relatorio.totalReceitasGeral}</strong></td>
+            <td><strong>R$ {relatorio.totalDespesasGeral}</strong></td>
             <td><strong>R$ {relatorio.saldoGeral}</strong></td>
           </tr>
         </tbody>

@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import type { Pessoa } from "../types";
 import { buscarPessoas, cadastrarPessoa, removerPessoa } from "../services/pessoaService";
 
-//criei esse componente de pessoas 
-
+//Componente responsável pela tela Pessoas, inclui o cadastro, listagem e remoção
+//Busca os dados da API pelas funções do pessoaService
 function Pessoas() {
     const [pessoas, setPessoas] = useState<Pessoa[]>([]);
     const [nome, setNome] = useState("");
@@ -15,6 +15,7 @@ function Pessoas() {
         setPessoas(dados);
     }
 
+    //Busca a lista de pessoas assim que o componente é executado 
     useEffect(() => {
         carregarPessoas();
     }, []);
@@ -23,10 +24,12 @@ function Pessoas() {
         setErro("");
         try{
             await cadastrarPessoa(nome, Number(idade));
+            //Limpa o formulário e busca a lista atualizada
             setNome("");
             setIdade("");
             carregarPessoas();
     } catch (e) {
+        //Erro de validação vindo do backend
     setErro((e as Error).message);
   }
 }
