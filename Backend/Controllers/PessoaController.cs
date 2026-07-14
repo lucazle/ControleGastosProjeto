@@ -5,25 +5,27 @@ using ControleGastos.DTO.Pessoas;
 
 namespace ControleGastos.Controllers {
 
+    //Camada responsável por receber as requisições HTTP relacionadas a Pessoa. O construtor é responsável pelo
+    //acesso as regras de negócio através de Injeção de Dependência. Ele só encaminha os dados e traduz os resultados
+    //em respostas HTTP
     [ApiController]
     [Route("api/pessoas")]
     public class PessoaController : ControllerBase {
-
-        //Injeção de depêndecia da camada de Service
+        
         private readonly IPessoaService _pessoaService;
         
         public PessoaController(IPessoaService pessoaService) {             
             _pessoaService = pessoaService;
         }
 
-        //Método GET para listar todas pessoas
+        //Lista todas pessoas cadastradas
         [HttpGet]
         public async Task<ActionResult<List<ResponsePessoaDto>>> Listar() {       
             var pessoas = await _pessoaService.ListarPessoasAsync();
             return Ok(pessoas);
         }
 
-        //Método POST para registrar novos usuários no banco
+        //Cadastra uma nova pessoa. Captura as exceções lançadas pelo service e devolve um erro.
         [HttpPost]
         public async Task<ActionResult<ResponsePessoaDto>> Cadastrar (RequestPessoaDto dto) {
             try {
@@ -35,7 +37,7 @@ namespace ControleGastos.Controllers {
             
         }
 
-        //Método DELETE com para remover dados do banco, como usei uma exception no service, é necessário utilizar o método com try catch ele captura o erro e lança uma resposta HTTP, tipo 404 
+        //Deleta uma pessoa. As transações são apagadas junto, lança uma exceção se o ID não existir.
         [HttpDelete("{id}")]                             
         public async Task<IActionResult> Remover (int id) {  
             try {

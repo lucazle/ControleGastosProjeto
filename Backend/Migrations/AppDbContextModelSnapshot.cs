@@ -31,7 +31,7 @@ namespace ControleGastos.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Pessoas");
+                    b.ToTable("Pessoas", (string)null);
                 });
 
             modelBuilder.Entity("ControleGastos.Models.Transacao", b =>
@@ -57,7 +57,7 @@ namespace ControleGastos.Migrations
 
                     b.HasIndex("PessoaId");
 
-                    b.ToTable("Transacoes");
+                    b.ToTable("Transacoes", (string)null);
                 });
 
             modelBuilder.Entity("ControleGastos.Models.Transacao", b =>

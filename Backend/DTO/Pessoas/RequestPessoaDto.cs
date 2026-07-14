@@ -4,5 +4,3 @@
         public int Idade { get; set; }
     }
 }
-
-//Criado para quando o frontend fizer uma requisição para a criação de uma nova pessoa, por exemplo.

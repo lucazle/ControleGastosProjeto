@@ -8,5 +8,3 @@ namespace ControleGastos.DAO.Interfaces {
         Task RemoverPessoaAsync(Pessoa pessoa);
     }
 }
-
-//criei as interfaces a serem utilizdas no PessoaDao, permitindo uma camada exclusiva só para o acesso dos métodos ao banco

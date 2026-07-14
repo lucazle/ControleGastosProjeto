@@ -9,5 +9,3 @@
         public Pessoa Pessoa { get; set; }
     }
 }
-
-//Criação da entidade Transação com o ID da Entidade Pessoa para referenciar dizendo que cada transação pertence a uma pessoa

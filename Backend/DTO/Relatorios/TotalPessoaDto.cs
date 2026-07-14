@@ -7,5 +7,3 @@
         public decimal Saldo => TotalReceitas - TotalDespesas;
     }
 }
-
-//Esse DTO representa o total de receitas, despesas e saldo de uma pessoa. 

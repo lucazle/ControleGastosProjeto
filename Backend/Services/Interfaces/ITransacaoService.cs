@@ -6,5 +6,3 @@ namespace ControleGastos.Services.Interfaces {
         Task<ResponseTransacaoDto> CadastrarTransacaoAsync(RequestTransacaoDto dto);
     }
 }
-
-////Interface para utilizar no service que ja passa o 

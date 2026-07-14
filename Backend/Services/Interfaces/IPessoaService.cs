@@ -7,5 +7,3 @@ namespace ControleGastos.Services.Interfaces {
         Task RemoverPessoaAsync(int id);
     }
 }
-
-//Interface para utilizar no service

@@ -5,5 +5,3 @@
         public int Idade { get; set; }
     }
 }
-
-//segue a mesma lógica do ResponseTransacaoDto, retorna os dados solicitados pelo request, incluindo o ID do usuário.

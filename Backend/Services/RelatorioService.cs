@@ -4,20 +4,24 @@ using ControleGastos.Models;
 using ControleGastos.Services.Interfaces;
 
 namespace ControleGastos.Services {
+
+    //Camada responsável pelas regras de negócio do Relatório. O construtor é responsável pelo acesso ao banco
+    //através de Injeção de Dependência. Só injeta o IPessoaDao por que essa tabela já está vinculada a tabela de transações.
+    //Ele exibe os dados de cada pessoa somando o total de receitas, despesas e saldo.
     public class RelatorioService : IRelatorioService {
+
         private readonly IPessoaDao _pessoaDao;
-        //Injeção de dependência para trazer os dados de cada pessoa do pessoaDao que já tem todas informações que preciso para gerar o relatório
-        public RelatorioService(IPessoaDao pessoaDao) {              
+        public RelatorioService(IPessoaDao pessoaDao) {
             _pessoaDao = pessoaDao;
         }
 
-    public async Task<RelatorioTotaisDto> GerarRelatorioAsync() {
+        public async Task<RelatorioTotaisDto> GerarRelatorioAsync() {
 
-            //aqui eu chamo todas pessoas (ja com suas transações como deixei no PessoaDao)
-            var pessoas = await _pessoaDao.ListarPessoaAsync();         
+            var pessoas = await _pessoaDao.ListarPessoaAsync();
 
-            //para aqui ele vai fazer o total de cada pessoa
-            var totaisPorPessoa = pessoas                               
+            //Essa variável calcula e mostra o total de despesas e receitas de cada pessoa da lista.
+            //Chama pessoa por pessoa e faz a soma dos dados. O saldo ja é calculado direto no TotalPessoaDto.
+            var totaisPorPessoa = pessoas
                 .Select(p => new TotalPessoaDto {
                     PessoaId = p.Id,
                     Nome = p.Nome,
@@ -30,7 +34,7 @@ namespace ControleGastos.Services {
                 })
             .ToList();
 
-            //aqui eu retorno o total de todas pessoas que estão listadas
+            //Retorna o relatório total de todas pessoas.
             return new RelatorioTotaisDto {
                 Pessoas = totaisPorPessoa,
                 TotalReceitasGeral = totaisPorPessoa.Sum(p => p.TotalReceitas),
