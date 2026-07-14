@@ -24,7 +24,7 @@ function Totais() {
         <div>
             <button onClick={carregarRelatorio}>Atualizar</button>
             <div>
-                Sempre que adicionar uma nova transação clique em atualizar.
+                Sempre que adicionar ou remover uma nova transação clique em atualizar.
             </div>
         </div>
 
