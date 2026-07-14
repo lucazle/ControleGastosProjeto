@@ -38,24 +38,24 @@ function Transacoes() {
         }
     }
 
-return (
-    <div>
-        <h2>Transações</h2>
-
-        {erro && <p style={{ color: "red" }}>{erro}</p>}
-
+    return (
         <div>
+            <h2>Transações</h2>
+
+            {erro && <p style={{ color: "red" }}>{erro}</p>}
+
+            <div>
             <input
                 type="text"
                 placeholder="Descrição"
                 value={descricao}
                 onChange={(e) => setDescricao(e.target.value)}
             />
-            <input 
-            type="number"
-            placeholder="Valor"
-            value={valor}
-            onChange={(e) => setValor(e.target.value)}
+            <input
+                type="number"
+                placeholder="Valor"
+                value={valor}
+                onChange={(e) => setValor(e.target.value)}
             />
 
             <select value={tipo} onChange={(e) => setTipo(e.target.value as TipoTransacao)}>
@@ -66,23 +66,42 @@ return (
             <select value={pessoaId} onChange={(e) => setPessoaId(e.target.value)}>
                 <option value="">Selecione uma pessoa</option>
                 {pessoas.map((pessoa) => (
-                    <option key={pessoa.id} value={pessoa.id}>
-                        {pessoa.nome}
-                    </option>
-                ))} 
+                <option key={pessoa.id} value={pessoa.id}>
+                    {pessoa.nome}
+                </option>
+                ))}
             </select>
 
-            <button onClick={handleCadastrar}>Cadastrar</button>
-        </div>
+            <div>
+                <button onClick={carregarDados}>Atualizar</button>
+                <button onClick={handleCadastrar}>Cadastrar</button>
+                <div>
+                    Sempre que adicionar uma nova pessoa clique em atualizar.
+                </div>
+            </div>
+            </div>
 
-        <ul>
-            {transacoes.map((transacao) => (
-                <li key={transacao.id}>
-                    {transacao.descricao} - R$ {transacao.valor} - {transacao.tipo} - {transacao.pessoaNome}
-                </li>
-            ))}
-        </ul>
-    </div>
-)}
+            <table>
+            <thead>
+                <tr>
+                <th>Descrição</th>
+                <th>Valor</th>
+                <th>Tipo</th>
+                <th>Pessoa</th>
+                </tr>
+            </thead>
+            <tbody>
+                {transacoes.map((transacao) => (
+                <tr key={transacao.id}>
+                    <td>{transacao.descricao}</td>
+                    <td>R$ {transacao.valor}</td>
+                    <td>{transacao.tipo}</td>
+                    <td>{transacao.pessoaNome}</td>
+                </tr>
+                ))}
+            </tbody>
+            </table>
+        </div>
+)};
 
 export default Transacoes;

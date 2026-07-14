@@ -4,11 +4,15 @@ using ControleGastos.Services;
 using ControleGastos.Services.Interfaces;
 using ControleGastos.Data;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(options => {
+        options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+    });
 
 //registra o AppDbContext no sistema de DI por que vai precisar usar ele em outros momentos na aplicação.
 builder.Services.AddDbContext<AppDbContext>(options =>

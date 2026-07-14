@@ -1,0 +1,61 @@
+import { useEffect, useState } from "react";
+import type { RelatorioTotais } from "../types";
+import { buscarRelatorio } from "../services/relatorioService";
+
+function Totais() {
+  const [relatorio, setRelatorio] = useState<RelatorioTotais | null>(null);
+
+  async function carregarRelatorio() {
+    const dados = await buscarRelatorio();
+    setRelatorio(dados);
+  }
+
+  useEffect(() => {
+    carregarRelatorio();
+  }, []);
+
+  if (!relatorio) {
+    return <p>Carregando...</p>;
+  }
+
+  return (
+    <div>
+      <h2>Totais</h2>
+        <div>
+            <button onClick={carregarRelatorio}>Atualizar</button>
+            <div>
+                Sempre que adicionar uma nova transação clique em atualizar.
+            </div>
+        </div>
+
+      <table border={1} cellPadding={8}>
+        <thead>
+          <tr>
+            <th>Pessoa</th>
+            <th>Receitas</th>
+            <th>Despesas</th>
+            <th>Saldo</th>
+          </tr>
+        </thead>
+        <tbody>
+          {relatorio.pessoas.map((pessoa) => (
+            <tr key={pessoa.pessoaId}>
+              <td>{pessoa.nome}</td>
+              <td>R$ {pessoa.totalReceitas}</td>
+              <td>R$ {pessoa.totalDespesas}</td>
+              <td>R$ {pessoa.saldo}</td>
+            </tr>
+          ))}
+          <tr>
+            <td><strong>Total Geral</strong></td>
+            <td><strong>R$ {relatorio.totalReceitaGeral}</strong></td>
+            <td><strong>R$ {relatorio.totalDespesaGeral}</strong></td>
+            <td><strong>R$ {relatorio.saldoGeral}</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+export default Totais;

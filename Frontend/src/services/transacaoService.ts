@@ -1,7 +1,6 @@
 import type { Transacao, TipoTransacao } from "../types";
-import { buscarPessoas } from "./pessoaService";
 
-const API_URL = "http://localhost:5256/api/transacoes";
+const API_URL = "https://localhost:7279/api/transacoes";
 
 //essa função vai listar todas as transações trazendo elas do back
 export async function buscarTransacoes(): Promise<Transacao[]> {
@@ -15,7 +14,7 @@ export async function cadastrarTransacao(
     valor: number,
     tipo: TipoTransacao,
     pessoaId: number
-): Promise<Transacao> {
+): Promise<void> {
     const resposta = await fetch(API_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -26,6 +25,4 @@ export async function cadastrarTransacao(
         const erro = await resposta.json();
         throw new Error(erro.mensagem)
     }
-
-    return resposta.json();
 }

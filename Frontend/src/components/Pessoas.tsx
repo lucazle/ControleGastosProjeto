@@ -35,31 +35,43 @@ function Pessoas() {
             <h2>Pessoas</h2>
 
             <div>
-                <input
-                    type="text"
-                    placeholder="Nome"
-                    value={nome}
-                    onChange={(e) => setNome(e.target.value)}
-                />
-                <input
-                    type="number"
-                    placeholder="Idade"
-                    value={idade}
-                    onChange={(e) => setIdade(e.target.value)}
-                />
-                <button onClick={handleCadastrar}>Cadastrar</button>        
+            <input
+                type="text"
+                placeholder="Nome"
+                value={nome}
+                onChange={(e) => setNome(e.target.value)}
+            />
+            <input
+                type="number"
+                placeholder="Idade"
+                value={idade}
+                onChange={(e) => setIdade(e.target.value)}
+            />
+            <button onClick={handleCadastrar}>Cadastrar</button>
             </div>
 
-            <ul>
+            <table>
+            <thead>
+                <tr>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th></th>
+                </tr>
+            </thead>
+            <tbody>
                 {pessoas.map((pessoa) => (
-                    <li key={pessoa.id}>
-                        {pessoa.nome} - {pessoa.idade} anos
-                        <button onClick={() => handleRemover(pessoa.id)}>Remover</button>
-                    </li>
+                <tr key={pessoa.id}>
+                    <td>{pessoa.nome}</td>
+                    <td>{pessoa.idade} anos</td>
+                    <td>
+                    <button onClick={() => handleRemover(pessoa.id)}>Remover</button>
+                    </td>
+                </tr>
                 ))}
-            </ul>
+            </tbody>
+            </table>
         </div>
-    )
+    );
 }
 
 export default Pessoas;
